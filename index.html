@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Comic Neue', cursive;
+            font-family: 'Comic Sans MS', cursive;
             background-image: url('image.png');
             background-size: cover;
             background-position: center;
             text-align: center;
-            color: white;
+            color: black;
         }
         h1 {
             font-size: 3em;
@@ -42,23 +42,23 @@
 </head>
 <body>
     <h1>👃 Welcome to $NOSE</h1>
-    <h2>The Token That Never Sleeps</h2>
+    <h2>SNIFF SNIFF XD  </h2>
     
     <img src="nose_logo.png" class="logo" width="100" alt="$NOSE Logo" onmouseover="playSniff()">
     
     <audio id="sniffSound" src="sniff.mp3"></audio>
     
     <h3>Rate Your Sniff Level:</h3>
-    <input type="range" class="sniff-meter" min="0" max="10" step="1" value="5" onchange="updateSniffMeter(this.value)">
+    <input type="range" class="sniff-meter" min="0" max="69" step="1" value="5" onchange="updateSniffMeter(this.value)">
     <p id="sniffLevel">Sniff Intensity: 5</p>
     
-    <button class="buy-button" onclick="window.location.href='https://pump.fun'">Buy $NOSE</button>
+    <button class="buy-button" onclick="window.location.href='https://pump.fun'">Buy $NOSE or GET SNIFFED</button>
     
     <div class="meme-container">
         <h3>Click for a Random Meme:</h3>
-        <button onclick="showMeme()">🎭 Generate Meme</button>
+        <button onclick="showMeme()">🎭 Generate Meme </button>
         <br>
-        <img id="memeImage" width="600" style="display:none; margin-top: 25px;">
+        <img id="memeImage" width="500" style="display:none; margin-top: 20px;">
     </div>
     
     <script>
@@ -71,7 +71,9 @@
         function showMeme() {
             const memes = [
                 'NoseTesla.webp', 'NoseEinstein.webp', 'JackNoseparrow.webp', 'DarthNoser.webp', 'MichaelNosemacher.webp',
-                'SebastianNosesteiger.webp', 'McNoserConor.webp', 'JuliusNoser.webp'
+                'SebastianNosesteiger.webp', 'McNoserConor.webp', 'JuliusNoser.webp', 'x001.webp', 'x002.webp',
+                'x003.webp', 'x004.webp', 'x005.webp', 'x006.webp', 'x007.webp', 'x008.webp', 'x009.webp',
+                'x010.webp', 'x011.webp', 'x012.webp', 'x013.webp', 'x014.webp'
             ];
             const randomMeme = memes[Math.floor(Math.random() * memes.length)];
             document.getElementById('memeImage').src = randomMeme;
