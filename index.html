@@ -17,8 +17,8 @@
         }
 	
         h1 {
-            font-size: 4em;
-            margin-top: 70px;
+            font-size: 2em;
+            margin-top: 35px;
         }
         .sniff-meter {
             width: 300px;
@@ -101,7 +101,121 @@
             document.getElementById('memeImage').style.display = 'block';
         }
     </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniff & Nose Quote Generator</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #1e1e2e;
+            color: #ffcc00;
+            text-align: center;
+            padding: 50px;
+        }
+        #quote-box {
+            font-size: 1.5em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            max-width: 80%;
+        }
+        #generate-quote {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background: #ff6600;
+            color: #fff;
+            cursor: pointer;
+        }
+        #generate-quote:hover {
+            background: #ff4500;
+        }
+    </style>
+</head>
+<body>
 
+    <h1>🎭 Legendary Quotes XD</h1>
+    <div id="quote-box">Click the button to get a legendary Sniff/Nose Quote! 🔥</div>
+    <br>
+    <button id="generate-quote">Generate Quote</button>
+
+    <script>
+        const quotes = [
+            "🚀 'Sniffvester Stallone: Keep sniffing, keep winning!'",
+            "🔥 'Albert Nosestein: E=MC Nose - Energy equals Massive Sniff Chaos!'",
+            "😂 'Nose Wick: Yeah, I’m nosing back!'",
+            "💎 'Sniff Bezos: Work hard, sniff harder!'",
+            "👃 'Mark Snifferberg: The future is Sniff-verse!'",
+            "💨 'Snoop Snogg: Drop the bass and sniff up the vibes!'",
+            "🏛️ 'Nose Gandhi: Be the nose you wish to see in the world!'",
+            "😆 'Nose Tyson: Everyone has a plan until they get sniffed!'",
+            "👑 'Nose Musk: To the sniff and beyond! 🚀'",
+            "🤴 'King Sniff VIII: I sniff, therefore I am!'",
+            "⚡ 'Sniff Potter: You’re a sniffard, Harry! ⚡'",
+            "🏆 'Nose Ali: Float like a sniff, sting like a legend!'",
+            "🎶 'Sniff Marley: Don’t worry, sniff happy! 🎶'",
+            "💀 'Sniff Vader: I find your lack of sniff disturbing!'",
+            "🌎 'Sniff Jobs: One more sniff to change the world!'",
+            "🎭 'Sniff Pacino: Say hello to my sniff friend!'",
+            "🏛 'Julius Nosar: Veni, Vidi, Sniffi! (I came, I saw, I sniffed!)'",
+            "👮‍♂️ 'RoboNose: Dead or alive, you’re coming with a sniff!'",
+            "🍕 'Nose Caprio: I’m not sniffing leaves, I’m sniffing dreams!'",
+            "🚗 'Sniff Diesel: It doesn’t matter if you sniff by an inch or a mile, sniffing is sniffing!'",
+            "🎬 'Sniff Freeman: Get busy sniffing, or get busy dying!'",
+            "🕵️‍♂️ 'Sherlock Nose: It’s elementary, my dear Sniffson!'",
+            "👻 'Sniffbusters: Who you gonna sniff?!'",
+            "🔥 'Sniff Washington: My fellow sniffers, today we sniff for freedom!'",
+            "💰 'Sniff Buffett: The best investment is in sniffing more!'",
+            "📈 'Sniff Gates: A sniff in every home, a meme in every wallet!'",
+            "🎤 'Sniff Dogg: Drop it like it's sniffing hot!'",
+            "🏎 'Sniff Schumacher: Speed, power, and an unstoppable sniff!'",
+            "🏄 'Sniff Fieri: Welcome to Sniff-town, where we sniff all the way!'",
+            "👾 'Sniff Matrix: What if I told you… the sniff is real?'", 
+            "⚔️ 'Sniff Samurai: The way of the sniff is the way of the warrior!'",
+            "🦸 'Sniffpool: Maximum sniffage, baby!'",
+            "🎩 'Sniff Wonka: Come with me and you'll sniff in a world of pure imagination!'",
+            "🏋️ 'Sniff Schwarzenegger: Get to the sniffa now!'",
+            "💃 'Sniff Kardashian: I love sniffing selfies!'",
+            "🦹 'Sniff Thanos: Perfectly sniffed, as all things should be!'",
+            "🧑‍🚀 'Sniff Armstrong: One small sniff for man, one giant sniff for meme-kind!'",
+            "👽 'Sniff X-Files: The sniff is out there!'",
+            "🕶 'Sniff Neo: I know sniff-fu!'",
+            "🎤 'Sniff Eminem: His palms are sniffing, knees weak, sniff is heavy!'", 
+            "🚬 'Sniff Eastwood: Do you feel sniffy, punk?'",
+            "🏛 'Sniff Lincoln: Four sniff-years ago…'",
+            "🎬 'Sniff Spielberg: Just when you thought it was safe to sniff again!'",
+            "🐉 'Sniff Daenerys: I am the Mother of Sniffs!'",
+            "🎤 'Sniff Elvis: A little less conversation, a little more sniffing!'",
+            "👔 'Sniff Harvey Specter: The only time success comes before sniff is in the dictionary!'",
+            "🐺 'Sniff DiCaprio: I’m not leaving. I’M SNIFFING RIGHT HERE!'",
+            "🧙 'Sniff Gandalf: A sniff is never late, nor is it early, it arrives precisely when it means to!'",
+            "🍻 'Sniff Homer Simpson: Mmm…sniff…'",
+            "🌊 'Sniff Aquaman: The sniff calls to me!'",
+            "🎩 'Mr. SniffBean: The best part of waking up, is sniffing your cup!'",  
+            "📺 'Sniff DeGeneres: Just keep sniffing, just keep sniffing!'",  
+            "🏀 'Sniff Jordan: I’ve failed over and over, and that is why I sniff!'",  
+            "⚔️ 'Sniff Gladiator: Are you not sniffing entertained?!'",  
+            "🏰 'Sniff Disney: If you can dream it, you can sniff it!'",  
+            "🎸 'Sniff Hendrix: Excuse me while I sniff the sky!'",  
+            "🔬 'Sniff Hawking: Intelligence is the ability to sniff to change!'",  
+            "🎭 'Sniff Joker: Why so sniff-ious?!'",  
+            "🚀 'Sniff Spock: Live long and sniff on!'",  
+            "👾 'Sniff Mario: Here we sniff!'",  
+            "🔮 'Sniff Nostradamus: I predict… a great sniffing future!'"
+        ];
+
+        document.getElementById('generate-quote').addEventListener('click', function() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote-box').innerHTML = randomQuote;
+        });
+    </script>
+
+</body>
 <section id="roadmap">
         <h2>🚀 Sniff Meme Coin Roadmap 🔥</h2>
         
